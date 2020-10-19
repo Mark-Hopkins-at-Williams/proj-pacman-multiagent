@@ -323,7 +323,7 @@ def getDisplay(graphicsByDefault, options=None):
 
 
 
-if __name__ == '__main__':
+def runGrader(argv):
     options = readCommand(sys.argv)
     if options.generateSolutions:
         confirmGenerate()
@@ -346,6 +346,10 @@ if __name__ == '__main__':
     if options.runTest != None:
         runTest(options.runTest, moduleDict, printTestCase=options.printTestCase, display=getDisplay(True, options))
     else:
-        evaluate(options.generateSolutions, options.testRoot, moduleDict,
+        e = evaluate(options.generateSolutions, options.testRoot, moduleDict,
             edxOutput=options.edxOutput, muteOutput=options.muteOutput, printTestCase=options.printTestCase,
             questionToGrade=options.gradeQuestion, display=getDisplay(options.gradeQuestion!=None, options))
+        return e
+
+if __name__ == '__main__':
+    runGrader(sys.argv)
