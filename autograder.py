@@ -320,10 +320,8 @@ def getDisplay(graphicsByDefault, options=None):
     import textDisplay
     return textDisplay.NullGraphics()
 
-def run(args):
-    main(args.split()[1:])
 
-def main(argv):
+def runGrader(argv):
     options = readCommand(argv)
     if options.generateSolutions:
         confirmGenerate()
@@ -351,4 +349,4 @@ def main(argv):
             questionToGrade=options.gradeQuestion, display=getDisplay(options.gradeQuestion!=None, options))
 
 if __name__ == '__main__':
-    main(sys.argv)
+    runGrader(sys.argv)
