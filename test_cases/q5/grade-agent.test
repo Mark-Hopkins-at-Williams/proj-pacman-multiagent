@@ -7,12 +7,12 @@ maxTime: "120"
 numGames: "10"
 
 nonTimeoutMinimum: "0"
-nonTimeoutThresholds: "10"
+nonTimeoutThresholds: "20"
 
-scoreThresholds: "500 1000"
+scoreThresholds: "1000"
 
 winsMinimum: "1"
-winsThresholds: "1 5 10"
+winsThresholds: "10"
 
 randomSeed: "0"
 ghosts: "[RandomGhost(1)]"

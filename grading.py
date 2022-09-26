@@ -88,8 +88,8 @@ class Grades:
       print('\n### Question %s: %d/%d ###\n' % (q, self.points[q], self.maxes[q]))
 
 
-    print('\nFinished at %d:%02d:%02d' % time.localtime()[3:6])
-    print("\nProvisional grades\n==================")
+    # print('\nFinished at %d:%02d:%02d' % time.localtime()[3:6])
+    print("\nGrades\n==================")
 
     for q in self.questions:
       print('Question %s: %d/%d' % (q, self.points[q], self.maxes[q]))
@@ -128,10 +128,7 @@ class Grades:
                     @@@@@@@@@@@@@@@@@@
 
 """)
-    print("""
-Your grades are NOT yet registered.  To register your grades, make sure
-to follow your instructor's guidelines to receive credit on your project.
-""")
+
 
     if self.edxOutput:
         self.produceOutput()

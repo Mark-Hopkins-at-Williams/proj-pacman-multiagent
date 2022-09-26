@@ -446,7 +446,7 @@ class EvalAgentTest(testClasses.TestCase):
         self.nonTimeoutThresholds = [int(s) for s in testDict.get('nonTimeoutThresholds','').split()]
         self.winsThresholds = [int(s) for s in testDict.get('winsThresholds','').split()]
 
-        self.maxPoints = sum([len(t) for t in [self.scoreThresholds, self.nonTimeoutThresholds, self.winsThresholds]])
+        self.maxPoints = sum([len(t) for t in [self.scoreThresholds, self.winsThresholds]])
         self.agentArgs = testDict.get('agentArgs', '')
 
 
@@ -483,7 +483,7 @@ class EvalAgentTest(testClasses.TestCase):
             return (passed, points, value, minimum, thresholds, name)
 
         results = [gradeThreshold(averageScore, self.scoreMinimum, self.scoreThresholds, "average score"),
-                   gradeThreshold(nonTimeouts, self.nonTimeoutMinimum, self.nonTimeoutThresholds, "games not timed out"),
+                   #gradeThreshold(nonTimeouts, self.nonTimeoutMinimum, self.nonTimeoutThresholds, "games not timed out"),
                    gradeThreshold(wins, self.winsMinimum, self.winsThresholds, "wins")]
 
         totalPoints = 0
